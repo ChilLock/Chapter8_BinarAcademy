@@ -1,0 +1,11 @@
+stages:
+- deploy
+
+Deploy to Heroku:
+  stage: deploy
+  image: ruby:latest
+  only:
+  - main
+  script:
+  - gem install dpl
+  - dpl --provider=heroku --app=chapter08-bcr --api-key=28b01f1a-b3a9-4c3d-972e-920b84166ce9
